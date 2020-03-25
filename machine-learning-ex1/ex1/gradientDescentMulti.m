@@ -17,16 +17,11 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
-
-
-
-
-
-
-
-
-
-
+   n = size(X,2); % number of features
+   h_theta_x = X * theta;
+   for j = 1:n
+   thetaj = theta(j) - (alpha/m) * sum((h_theta_x - y).* X(:,j));
+   theta(j) = thetaj;
     % ============================================================
 
     % Save the cost J in every iteration    

@@ -26,9 +26,17 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
+% Number of training examples
+m = size(X,1);
+% Number of features
+n = size(X,2);
 
-
-
+for feature = 1:n
+  mu(feature) = mean(X(: , feature));
+  sigma(feature) = std(X(: , feature));
+  X_norm(:,feature) = (X_norm(:,feature) - mu(feature)) / sigma(feature);
+     
+  
 
 
 
